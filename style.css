@@ -1,3 +1,45 @@
-h1, p {
-  font-family: Lato;
+:root {
+  --font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
+    sans-serif;
+}
+
+body {
+  font-family: var(--font-family);
+}
+
+ol {
+  list-style: none;
+  padding: 0;
+  counter-reset: todo-item;
+}
+
+ol li {
+  counter-increment: todo-item;
+}
+
+ol li div::before {
+  content: counter(todo-item) '.';
+  margin-right: 4px;
+}
+
+.todo-item {
+  display: flex;
+  padding: 4px 8px;
+  align-items: center;
+}
+
+ol li:hover {
+  background-color: beige;
+}
+
+button {
+  font-family: var(--font-family);
+  color: antiquewhite;
+  background-color: chocolate;
+  border: 0ch;
+  padding: 1ch;
+  cursor: pointer;
+  border-radius: 0.5ch;
+  letter-spacing: 1px;
+  margin-left: auto;
 }
